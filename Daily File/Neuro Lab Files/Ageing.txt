@@ -1,0 +1,96 @@
+Ageing select Inp/off - appli================================
+-----------------------------------------------------------------------
+
+CASE [Ageing Inp/off]
+WHEN 1 THEN [Total inprinciple Ageing (application)]
+WHEN 2 THEN [Total offline ageing (application)]
+WHEN 3 THEN ([Total inprinciple Ageing (application)] 
++ [Total offline ageing (application)])
+END
+****************************
+
+Total inprinciple Ageing (application)=============
+-------------------------------------------------------------------------
+ZN([Ageing inprinciple pending(application) (copy)] )
++ ZN([Ageing rejection (application) (copy)])
+ + ZN([Ageing Inprinciple (Application) (copy)])
+
+
+Total offline ageing (application)=========================
+-------------------------------------------------------------------------------
+ZN([Ageing rejection offline(application)]) 
++ ZN([Ageing offline pending (application) ]) 
++ ZN([Ageing offline sanction pending (application)])
+
+
+
+
+
+
+
+
+Ageing inprinciple pending(application) (copy)================
+--------------------------------------------------------------------------------
+IF [inprinciple <= end_date (copy)] = [TRUE] AND [proposal_status]=2
+ AND [Inprinciple Tag] = [TRUE]
+THEN
+[application_id]
+END
+
+Ageing rejection (application) (copy)================
+------------------------------------------------------------------------
+IF [inprinciple <= end_date (copy)] = [TRUE] AND 
+ [Pending cut off rej date >= end_date  (copy)] = TRUE 
+AND [is_active] = [TRUE] AND [Inprinciple Tag] = [TRUE] AND   
+[proposal_status] = 4 
+THEN [application_id] END
+
+
+Ageing Inprinciple (Application) (copy)=================
+-------------------------------------------------------------------------
+IF [inprinciple <= end_date (copy)] = TRUE AND  
+[Pending cut off date >= end_date (copy)]  AND [is_active] = TRUE AND
+ [Inprinciple Tag] = TRUE
+ AND 
+[proposal_status] in (5,11,13) = TRUE
+
+THEN [application_id] END
+
+
+
+
+
+
+
+Ageing rejection offline(application)==================
+------------------------------------------------------------------------
+IF [Pending cut off date reject offline >= end_date ] = [TRUE] AND
+ [reject offline <= end_date]= TRUE and [stage_id] = 4  AND status = 6 
+AND ISNULL([org_id]) = [FALSE]  AND [offline_status] in (4,23)
+THEN [application_id] END
+
+
+Ageing offline pending (application)========================
+--------------------------------------------------------------------------
+IF [offline <= end_date ] = [TRUE] AND [stage_id]= 4 AND   [status]=6    
+AND 
+ISNULL([org_id]) = [FALSE] and [offline_status] = 1
+THEN
+[application_id]
+END
+
+
+Ageing offline sanction pending (application)=========================
+---------------------------------------------------------------------------
+IF [Pending cut off date offline sanctioned  >= end_date  ] = [TRUE] and
+[offline <= end_date ]  = TRUE and [stage_id] = 4 AND [status] = 6 AND  
+ISNULL([org_id]) = [FALSE] AND  [offline_status] IN (5,11,17)
+THEN
+[application_id]
+END
+
+
+
+
+
+

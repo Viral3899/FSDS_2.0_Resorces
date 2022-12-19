@@ -1,0 +1,89 @@
+https://drive.google.com/file/d/1cnpMBvAchVUdpnf8vRFYibb9XyjimUlX/view?usp=drivesdk
+
+
+1. Write a class called BankAccount that has the following:
+        • A field called name that stores the name of the account holder.
+        • A field called amount that stores the amount of money in the account.
+        • A field called interest_rate that stores the account’s interest rate (as a percentage).
+        • A constructor that just sets the values of the three fields above.
+        • A method called apply_interest() that takes no arguments and applies the interest to the
+        account. It should just modify the amount field and not return anything. For instance, if the
+        account has $1000 in it and the interest rate is 3%, then the amount variable should be changed
+        to $1030 ($1000 + 3% interest).
+        Then test the class, by creating a new BankAccount object for a user named Juan De Hattatime who
+        has $1000 at 3% interest. Then do the following:
+        • Use the apply_interest() method to apply the interest to the account.
+        • Print out how much money is now in the account after applying the interest.
+        • Change the account’s interest rate to 2%.
+        • Use the apply_interest() method to apply the interest to the account again.
+        • Print out how much money is now in the account after applying the interest again.
+        
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+ 2. Write a class called Item that represents an item for sale. It should have the following:
+      • Fields representing the name and price of the item
+      • A constructor that sets those fields,
+      • A __str__() method that returns a string containing the item name and price, with the price
+      formatted to exactly 2 decimal places
+      Test the class by creating a new item object and printing it out
+      
+      
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. Write a class called ShoppingCart that might be used in an online store. It should have the following:
+      • A list of Item objects that represents the items in the shopping cart
+      • A constructor that creates an empty list of items (the constructor should take no arguments except self)
+      • A method called add() that takes a name and a price and adds an Item object with that name
+      and price to the shopping cart
+      • A method called total() that takes no arguments and returns the total cost of the items in the
+      cart
+      34
+      • A method called remove_items() that takes an item name (a string) and removes any Item
+      objects with that name from the shopping cart. It shouldn’t return anything.
+      • A __str__() method that returns a string containing info on all the items in the shopping cart
+      Then test out the shopping cart as follows: (1) create a shopping cart; (2) add several items to it; (3)
+      print the cart’s total cost (using the total() method); (4) remove one of the items types; (5) print out
+      the cart
+      
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write a class called RestaurantCheck. It should have the following:
+      • Fields called check_number, sales_tax_percent, subtotal, table_number, and server_name
+      representing an identification for the check, the bill without tax added, the sales tax percentage,
+      the table number, and the name of the server.
+      • A constructor that sets the values of all four fields
+      • A method called calculate_total that takes no arguments (besides self) and returns the total
+      bill including sales tax.
+      • A method called print_check that writes to a file called check###.txt, where ### is the check
+      number and writes information about the check to that file, formatted like below:
+      Check Number: 443
+      Sales tax: 6.0%
+      Subtotal: $23.14
+      Total: $24.53
+      Table Number: 17
+      Server: Sonic the Hedgehog
+      Test the class by creating a RestaurantCheck object and calling the print_check() method
+      
+      
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+      
+      
+      
+5. Write a class called Ticket that has the following:
+      • A field cost for the price of the ticket and a string field time for the start time of the event
+      (assume times are in 24-hour format, like '18:35')
+      • A constructor that sets those variables
+      • A __str__() method that returns a string of the form Ticket(<cost>, <time>), where
+      <cost> and <time> are replaced with the values of the cost and time fields.
+      • A method called is_evening_time() that returns True or False, depending on whether the
+      time falls in the range from 18:00 to 23:59.
+      • A method called bulk_discount() that takes an integer n and returns the discount for buying n
+      tickets. There should be a 10% discount for buying 5 to 9 tickets, and a 20% discount for buying
+      10 or more. Otherwise, there is no discount. Return these percentages as integers.
+      Test the class by creating a Ticket item, printing it, calling the is_evening_time() method, and
+      calling the bulk_discount() method
+      
+      
+      
