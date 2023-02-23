@@ -1,0 +1,7 @@
+
+            Check Number: 1423
+            Sales tax: 12%
+            Subtotal: $560
+            Total: $627.2
+            Table Number: 20
+            Server: Viral Sherathiya
