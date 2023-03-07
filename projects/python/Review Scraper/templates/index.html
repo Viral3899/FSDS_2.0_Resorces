@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Home Page Scraper flipkart Scrapper</title>
-</head>
-<body>
-<div class="content">
-    <h1 style="text-align: center">Search</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <div class="form">
-        <form action="/review" method="POST">
-            <input type="text" name="content" id="content">
-            <input type="text" name="path" id="path">
-            <input type="submit" value="Search">
-        </form>
+</head>
+
+<body>
+    <div class="content">
+        <h1 style="text-align: center">Type Query of Which you Want To find Data</h1>
+        <h2 style="text-align: center">Enter the Path at Which you want to save csv</h2>
+
+
+        <div class="form" style="text-align: center;">
+            <form action="/review" method="POST">
+                <table style="text-align: center;align-items: center;">
+                    <tr>
+                        <td><label for="content">Query: </label></td>
+                        <td><input type="text" name="content" id="content"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="path">Path to Save: </label></td>
+                        <td><input type="text" name="path" id="path"></td>
+
+                </table>
+
+               <button type="submit" class="btn" >Search</button>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>

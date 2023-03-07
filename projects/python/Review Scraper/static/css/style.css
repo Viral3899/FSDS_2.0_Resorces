@@ -1,0 +1,32 @@
+body {
+  background-color: #83e29c;
+}
+
+body, html {
+  margin: auto;
+  font-family: sans-serif;
+  align-items: center;
+}
+
+#content {
+  margin: 0 auto;
+  width: 400px;
+  height: 30px;
+  font-size: 20px;
+}
+#path {
+  margin: 0 auto;
+  width: 400px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.form {
+  margin-top: auto;
+  align-items: center;
+}
+.btn{
+
+  height: 30px;
+  width: 55px;
+}

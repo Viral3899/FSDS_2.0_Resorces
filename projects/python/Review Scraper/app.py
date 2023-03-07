@@ -77,6 +77,7 @@ def review_fun():
 
                     df = pd.DataFrame(review_dict)
                     path_to_save=request.form['path']
+                    
                     df.to_csv(path_to_save+'/' + product_name[0:30].replace(" ", "_") + '.csv')
                     print(df)   
                     # return render_template('result.html')
