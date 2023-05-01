@@ -1,0 +1,17 @@
+import pandas as pd
+
+dataset['ORDERDATE'] = pd.to_datetime(dataset['ORDERDATE'], format='%m/%d/%Y %H:%M')
+
+# calculate the fiscal year range for each date in the date column
+
+dataset['ORDERDATE-QFY']  = pd.PeriodIndex(dataset['ORDERDATE'], freq='Q-MAR')
+
+dataset['ORDERDATE-Y-No-FY'] = dataset['ORDERDATE-QFY'].dt.qyear
+
+dataset['ORDERDATE-Q-No-FY'] = dataset['ORDERDATE-QFY'].dt.quarter
+
+dataset['Quarter'] = 'Q' + dataset['ORDERDATE-Q-No-FY'].astype(str)
+
+dataset['Year'] = (dataset['ORDERDATE-Y-No-FY'] - 1).astype(str) + '-' + dataset['ORDERDATE-Y-No-FY'].astype(str)
+
+dataset['Quarter-Year'] = dataset['Quarter'] + ' (' + dataset['Year'] + ')'
